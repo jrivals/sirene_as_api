@@ -1,5 +1,6 @@
 FROM ruby:2.4
 
+RUN apt-get update -qq && apt-get install -y software-properties-common
 
 RUN add-apt-repository -y ppa:openjdk-r/ppa
 
@@ -13,8 +14,8 @@ RUN apt-get update -qq && apt-get install -y build-essential \
   # for cron scheduler job
   cron \
   vim \
-  software-properties-common \
   oracle-java8-installer
+  
   
 
   
