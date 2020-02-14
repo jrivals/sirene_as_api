@@ -1,6 +1,8 @@
 FROM ruby:2.4
 
 
+RUN add-apt-repository -y ppa:openjdk-r/ppa
+
 RUN apt-get update -qq && apt-get install -y build-essential \
   sudo\
   libpq-dev \
@@ -11,11 +13,10 @@ RUN apt-get update -qq && apt-get install -y build-essential \
   # for cron scheduler job
   cron \
   vim \
-  software-properties-common
+  software-properties-common \
+  oracle-java8-installer
   
-RUN add-apt-repository -y ppa:openjdk-r/ppa
 
-RUN apt-get install -y oracle-java8-installer
   
 ENV APP_HOME /docker_build
 RUN mkdir $APP_HOME
