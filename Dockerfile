@@ -1,5 +1,7 @@
 FROM ruby:2.4
 
+RUN sudo apt-get install software-properties-common
+
 RUN sudo add-apt-repository ppa:webupd8team/java
 
 RUN apt-get update -qq && apt-get install -y build-essential \
