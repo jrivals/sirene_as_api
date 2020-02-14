@@ -10,13 +10,12 @@ RUN apt-get update -qq && apt-get install -y build-essential \
   libxslt1-dev \
   # for cron scheduler job
   cron \
-  vim
+  vim \
+  software-properties-common
   
-RUN apt-get install -y software-properties-common  
-  
-RUN add-apt-repository ppa:openjdk-r/ppa
+RUN add-apt-repository -y ppa:openjdk-r/ppa
 
-RUN apt-get install -y oracle-java8-installer \
+RUN apt-get install -y oracle-java8-installer
   
 ENV APP_HOME /docker_build
 RUN mkdir $APP_HOME
