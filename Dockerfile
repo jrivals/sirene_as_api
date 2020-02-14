@@ -1,19 +1,21 @@
 FROM ruby:2.4
 
-RUN sudo add-apt-repository ppa:openjdk-r/ppa
 
 RUN apt-get update -qq && apt-get install -y build-essential \
+  sudo\
   libpq-dev \
   postgresql-client \
-# for Solr
-  oracle-java8-installer \
 # for nokogiri
   libxml2-dev \
   libxslt1-dev \
   # for cron scheduler job
   cron \
   vim
+  
+RUN sudo add-apt-repository ppa:openjdk-r/ppa
 
+RUN apt-get install -y oracle-java8-installer \
+  
 ENV APP_HOME /docker_build
 RUN mkdir $APP_HOME
 WORKDIR $APP_HOME
