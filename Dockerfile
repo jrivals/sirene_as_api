@@ -1,12 +1,12 @@
 FROM ruby:2.4
 
-RUN curl -s "https://get.sdkman.io" | bash
-RUN source "$HOME/.sdkman/bin/sdkman-init.sh"
-RUN sdk install java
+RUN sudo add-apt-repository ppa:openjdk-r/ppa
 
 RUN apt-get update -qq && apt-get install -y build-essential \
   libpq-dev \
   postgresql-client \
+# for Solr
+  oracle-java8-installer \
 # for nokogiri
   libxml2-dev \
   libxslt1-dev \
