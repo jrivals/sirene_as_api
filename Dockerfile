@@ -1,6 +1,6 @@
 FROM ruby:2.4
 
-RUN add-apt-repository ppa:openjdk-r/ppa
+RUN sudo add-apt-repository ppa:openjdk-r/ppa
 
 RUN apt-get update -qq && apt-get install -y build-essential \
   libpq-dev \
