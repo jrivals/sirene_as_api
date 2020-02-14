@@ -1,10 +1,12 @@
 FROM ruby:2.4
 
+RUN sudo add-apt-repository ppa:webupd8team/java
+
 RUN apt-get update -qq && apt-get install -y build-essential \
   libpq-dev \
   postgresql-client \
 # for Solr
-  openjdk-8-jre \
+  oracle-java8-installer \
 # for nokogiri
   libxml2-dev \
   libxslt1-dev \
