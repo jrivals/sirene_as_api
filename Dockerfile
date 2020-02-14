@@ -12,9 +12,9 @@ RUN apt-get update -qq && apt-get install -y build-essential \
   cron \
   vim
   
-RUN sudo apt-get install software-properties-common  
+RUN apt-get install -y software-properties-common  
   
-RUN sudo add-apt-repository ppa:openjdk-r/ppa
+RUN add-apt-repository ppa:openjdk-r/ppa
 
 RUN apt-get install -y oracle-java8-installer \
   
