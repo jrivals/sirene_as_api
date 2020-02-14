@@ -10,7 +10,7 @@ RUN apt-get update -qq && apt-get install -y build-essential \
   # for cron scheduler job
   cron \
   vim \
-  software-properties-common && add-apt-repository -y ppa:openjdk-r/ppa && apt-get install -y oracle-java8-installer
+  software-properties-common && add-apt-repository -y ppa:openjdk-r/ppa
     
 ENV APP_HOME /docker_build
 RUN mkdir $APP_HOME
